@@ -147,7 +147,7 @@ public class TilePiece : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
                     }
                 }
              //   Debug.Log("bu tile'a en yakin cell, i = " + closestCellIndexI + " j = " + closestCellIndexJ + " uzaklik = " + closestCellLength);
-                if (gameManager.isOccupied(closestCellIndexI, closestCellIndexJ) || closestCellLength>10075)
+                if (gameManager.isOccupied(closestCellIndexI, closestCellIndexJ) || closestCellLength>16075)
                 {
                     return false;
                 }// işgal edilmediyse yerleştirme işlemleri

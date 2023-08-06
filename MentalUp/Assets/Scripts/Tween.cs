@@ -45,8 +45,6 @@ public class Tween : MonoBehaviour
         button = backPanel.GetComponentInChildren<Button>();
         button.onClick.AddListener(OnClickButton);
         backPanel.SetActive(false);
-        backPanel.transform.SetAsLastSibling();
-        losingImage.transform.SetAsLastSibling();
     }
 
     private void OnClickButton()
@@ -120,6 +118,7 @@ public class Tween : MonoBehaviour
     private void YouLostPopUp()
     {
         losingImage.SetActive(true);
+        losingImage.transform.SetAsLastSibling();
         LeanTween.scale(losingImage, new Vector3(1.5f, 1.5f, 1.5f), 2f).setDelay(.5f).setEase(LeanTweenType.easeOutElastic).setOnComplete(BackPanelPopUp);
         LeanTween.moveLocal(losingImage, new Vector3(0f, 500f, -1f), 0.7f).setDelay(2f).setEase(LeanTweenType.easeInOutCubic);
         LeanTween.scale(losingImage, new Vector3(1f, 1f, 1f), 2f).setDelay(1.7f).setEase(LeanTweenType.easeInOutCubic);
@@ -129,6 +128,8 @@ public class Tween : MonoBehaviour
     private void BackPanelPopUp()
     {
         backPanel.SetActive(true);
+        backPanel.transform.SetAsLastSibling();
+        losingImage.transform.SetAsLastSibling();
         LeanTween.moveLocal(backPanel, new Vector3(0f, 0f, 0f), 0.7f).setDelay(.5f).setEase(LeanTweenType.easeOutCirc);
     }
 

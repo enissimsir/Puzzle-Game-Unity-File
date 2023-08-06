@@ -27,6 +27,10 @@ public class GameController : MonoBehaviour
         if (time > 0f && isGameLoaded && isGameOn)
         {
             time -= Time.deltaTime; // Her çerçevede zamanı güncelle
+            if ((int)time % 5 == 0)
+            {
+                Debug.Log("time = " + time);
+            }
         }
         else if(isGameOn)
         {
